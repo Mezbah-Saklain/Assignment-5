@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Blog</title>
+    <style>
+        body {
+            background-color: #F4F7FF;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .back-btn {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .back-btn:hover {
+            background-color: #2980b9;
+        }
+
+        .question-answer-box {
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin: 10px auto 0px auto;
+            padding: 30px 20px 20px 70px;
+            width: 80%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .question {
+            font-weight: bold;
+            color: black;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .answer {
+            color: #555555;
+            /* Dark grey */
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .dashed-line {
+            border: 0;
+            border-top: 1px dashed #ccc;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <img src="assets/logo.png" alt="Logo">
+            <span>Dev<span class="bold">Board</span></span>
+        </div>
+        <div class="nav-right">
+            <button class="back-btn" onclick="location.href='index.html';">Back to Desk</button>
+        </div>
+    </nav>
+
+    <div class="question-answer-box">
+        <div class="question">Question-1: What are the different ways to select an element in the DOM?</div>
+        <hr class="dashed-line">
+        <div class="answer">
+            There are several ways to select an element in the DOM:
+            <ul>
+                <li><strong>By ID:</strong> `document.getElementById('id')` selects an element with a specific ID.</li>
+                <li><strong>By Class:</strong> `document.getElementsByClassName('className')` selects elements with a
+                    specific class name.</li>
+                <li><strong>By Tag Name:</strong> `document.getElementsByTagName('tagName')` selects elements with a
+                    specific tag.</li>
+                <li><strong>By CSS Selector:</strong> `document.querySelector('selector')` selects the first element
+                    matching a CSS selector.</li>
+                <li><strong>All Matching CSS Selectors:</strong> `document.querySelectorAll('selector')` selects all
+                    elements matching the selector.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="question-answer-box">
+        <div class="question">Question-2: What is the difference between innerHTML, innerText, and textContent ?</div>
+        <hr class="dashed-line">
+        <div class="answer">
+            <ul>
+                <li><strong>innerHTML:</strong> Allows you to get or set the HTML content inside an element, including
+                    HTML tags.</li>
+                <li><strong>innerText:</strong> Allows you to get or set the visible text content inside an element,
+                    excluding HTML tags.</li>
+                <li><strong>textContent:</strong> Similar to innerText, but retrieves or sets the text content,
+                    including hidden text.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="question-answer-box">
+        <div class="question">Question-3: What is event delegation in the DOM?</div>
+        <hr class="dashed-line">
+        <div class="answer">
+            Event delegation is a technique where you attach a single event listener to a parent element instead of
+            attaching listeners to each individual child element. This allows you to handle events more efficiently and
+            take advantage of event bubbling.
+            <br><br>
+            For example:
+            <pre>
+            document.getElementById('parent').addEventListener('click', function(event) {
+                if (event.target.matches('.child')) {
+                    // Handle click on child element
+                }
+            });
+            </pre>
+        </div>
+    </div>
+
+    <div class="question-answer-box">
+        <div class="question">Question-4: What is event bubbling in the DOM?</div>
+        <hr class="dashed-line">
+        <div class="answer">
+            Event bubbling is the process by which an event starts from the target element and propagates upward to the
+            parent elements. For example, if a button inside a div is clicked, the click event bubbles up from the
+            button to the div, then to the body, and finally to the root element.
+            <br><br>
+            You can prevent event bubbling by using the `event.stopPropagation()` method.
+        </div>
+    </div>
+
+    <div class="question-answer-box">
+        <div class="question">Question-5: How do you create, add, and remove elements using JavaScript?</div>
+        <hr class="dashed-line">
+        <div class="answer">
+            <ul>
+                <li><strong>Create an element:</strong> You can use `document.createElement('tagName')` to create a new
+                    element.</li>
+                <li><strong>Add an element:</strong> Use `parentElement.appendChild(newElement)` to append the new
+                    element to a parent.</li>
+                <li><strong>Remove an element:</strong> Use `parentElement.removeChild(elementToRemove)` to remove an
+                    element from its parent.</li>
+            </ul>
+            Example:
+            <pre>
+            let newElement = document.createElement('div');
+            newElement.innerHTML = "This is a new element!";
+            document.body.appendChild(newElement);
+            
+            // To remove the element
+            document.body.removeChild(newElement);
+            </pre>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevBoard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="assets/logo.png" alt="Logo">
+            <span>Dev<span class="bold">Board</span></span>
+        </div>
+        <div class="nav-actions">
+            <div class="nav-count-btn">
+                <div><img src="assets/checkbox.png"></div>
+                <div>
+                    <h2 id="taskCount">0</h2>
+                </div>
+            </div>
+            <button class="icon-btn"><img src="assets/theme-btn.png" alt="" srcset=""></button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="main-content">
+            <!-- Hero Section -->
+            <section class="hero">
+                <div class="hero-banner">
+                    <div class="task-box">
+                        <div class="task-checkbox">
+                            <img src="assets/checkbox.png" alt="" srcset="">
+                        </div>
+                        <div>
+                            <label for="taskCheckbox">Task Assigned</label>
+                            <div>
+                                <h2 class="task-count" id="taskCounter">6</h2>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="hero-box" onclick="location.href='blog.html';" style="cursor: pointer;">
+                        <img src="assets/board.png" alt="Logo">
+                        <span class="hero-text">Discover Something <br>New Today!</span>
+                    </div>
+
+                    <div class="date-box">
+                        <div class="calender-img">
+                            <img src="assets/calender.png" alt="Date Icon">
+                        </div>
+                        <span id="currentDate"></span>
+                    </div>
+                    <!-- Make these boxes inline using flexbox -->
+                </div>
+
+                <hr class="dashed-line">
+
+                <!-- Task Grid -->
+                <div class="task-grid">
+                    <!-- 6 Boxes -->
+                    <div class="task-card">
+                        <div class="task-title">ShopEase</div>
+                        <h3 class="task-heading">Fix Mobile Button Issue</h3>
+                        <div class="task-details">
+                            <p>
+                                Debug using Chrome DevTools, check for overlapping elements, and ensure onClick works
+                                properly.
+                            </p>
+                        </div>
+                        <div class="task-footer">
+                            <span class="deadline">Deadline: <br> <b>2025-03-05</b></span>
+                            <button class="complete-btn">Completed</button>
+                        </div>
+                    </div>
+
+                    <!-- Duplicate 5 more for total 6 boxes -->
+                    <div class="task-card">
+                        <div class="task-title">CloudSync</div>
+                        <h3 class="task-heading">Add Dark Mode</h3>
+                        <div class="task-details">
+                            <p>
+                                Store the user's preference in localStorage, update CSS variables dynamically, and apply
+                                a smooth transition effect.
+                            </p>
+                        </div>
+                        <div class="task-footer">
+                            <span class="deadline">Deadline: <br> <b>2025-03-05</b></span>
+                            <button class="complete-btn">Completed</button>
+                        </div>
+                    </div>
+                    <div class="task-card">
+                        <div class="task-title">SwiftPay</div>
+                        <h3 class="task-heading">Optimize Home page</h3>
+                        <div class="task-details">
+                            <p>
+                                Debug using Chrome DevTools, check for overlapping elements, and ensure onClick works
+                                properly.
+                            </p>
+                        </div>
+                        <div class="task-footer">
+                            <span class="deadline">Deadline: <br> <b>2025-03-05</b></span>
+                            <button class="complete-btn">Completed</button>
+                        </div>
+                    </div>
+                    <div class="task-card">
+                        <div class="task-title">Meta</div>
+                        <h3 class="task-heading">Add new emoji 🤲</h3>
+                        <div class="task-details">
+                            <p>
+                                Debug using Chrome DevTools, check for overlapping elements, and ensure onClick works
+                                properly.
+                            </p>
+                        </div>
+                        <div class="task-footer">
+                            <span class="deadline">Deadline: <br> <b>2025-03-05</b></span>
+                            <button class="complete-btn">Completed</button>
+                        </div>
+                    </div>
+                    <div class="task-card">
+                        <div class="task-title">Google LLC</div>
+                        <h3 class="task-heading">Integrate OpenAI API </h3>
+                        <div class="task-details">
+                            <p>
+                                Debug using Chrome DevTools, check for overlapping elements, and ensure onClick works
+                                properly.
+                            </p>
+                        </div>
+                        <div class="task-footer">
+                            <span class="deadline">Deadline: <br> <b>2025-03-05</b></span>
+                            <button class="complete-btn">Completed</button>
+                        </div>
+                    </div>
+                    <div class="task-card">
+                        <div class="task-title">Glassdoar</div>
+                        <h3 class="task-heading">Improve Job searching </h3>
+                        <div class="task-details">
+                            <p>
+                                Debug using Chrome DevTools, check for overlapping elements, and ensure onClick works
+                                properly.
+                            </p>
+                        </div>
+                        <div class="task-footer">
+                            <span class="deadline">Deadline: <br> <b>2025-03-05</b></span>
+                            <button class="complete-btn">Completed</button>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- Activity Log -->
+            <section class="activity-log">
+                <div class="activity-log-header">
+                    <img src="assets/activity.png" alt="Activity Icon">
+                    <h3>Activity Log</h3>
+                </div>
+                <button id="clearHistoryBtn">Clear History</button>
+                <ul id="logList"></ul>
+            </section>
+
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

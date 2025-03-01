@@ -1,0 +1,342 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #F4F7FF;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 10px auto;
+    padding: 10px 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.icon-btn {
+    padding: 7px 7px 4px 7px;
+    border-radius: 30px;
+    cursor: pointer;
+    border: none;
+}
+
+.nav-count-btn {
+    width: 80px;
+    background: #F4F7FF;
+    padding: 13px 10px 10px 10px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Main Content Layout */
+.main-content {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    /* Ensure top alignment */
+    justify-content: space-between;
+    width: 80%;
+    /* Same width as navbar */
+    margin: 10px auto;
+    /* Centered with margin */
+}
+
+/* Hero Section */
+.hero {
+    flex: 3;
+    /* Take 75% of the space (3 parts out of 4) */
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    width: 100%;
+    /* Make it take up full space in its flex container */
+    margin: 0;
+    /* Remove extra margin */
+}
+
+/* Hero Top Section */
+.hero-banner {
+    display: grid;
+    grid-template-columns: 1.5fr 3fr 1.5fr;
+    /* Set the columns to the desired ratio */
+    gap: 20px;
+    /* Optional: Add space between columns */
+    align-items: center;
+    /* Vertically align the items */
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+
+.dashed-line {
+    border-top: 1px dashed #ccc;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.hero-box,
+.date-box {
+    display: flex;
+    align-items: center;
+}
+
+.hero-box {
+    border-radius: 12px;
+    background: linear-gradient(130.70deg, rgb(55, 82, 253) 0.419%, rgb(108, 127, 250) 52.66%, rgb(155, 168, 248) 99.733%);
+    padding: 9px 15px;
+    padding-left: 35px;
+    gap: 20px;
+}
+
+.calender-img {
+    background: white;
+    padding: 9px 1px 6px 9px;
+    border-radius: 20px;
+}
+
+.task-checkbox {
+    background: white;
+    padding: 9px 9px 6px 9px;
+    border-radius: 20px;
+}
+
+.hero-box img,
+.date-box img {
+    margin-right: 8px;
+    /* Adjust image spacing */
+}
+
+.task-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    white-space: nowrap;
+    /* Prevent the text from wrapping to the next line */
+}
+
+.hero-text {
+    color: white;
+    font-size: 20px;
+}
+
+.date-box,
+.task-box {
+    background: #F4F7FF;
+    padding: 20px 15px;
+    border-radius: 10px;
+}
+
+.date-box {
+    padding: 25px 15px;
+}
+
+.bold-date {
+    font-weight: bold;
+}
+
+
+/* Task Section */
+.task-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.task-count {
+    padding: 5px;
+    border-radius: 5px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+/* Task Grid */
+.task-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.task-card {
+    background: #F4F7FF;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.task-title {
+    background: lightblue;
+    padding: 7px;
+    border-radius: 5px;
+    display: inline-block;
+    margin: 10px 0;
+}
+
+.task-heading {
+    margin: 15px 0;
+}
+
+.task-details {
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 15px 0;
+
+}
+
+.task-footer {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 10px;
+}
+
+.complete-btn {
+    background: #3752FD;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.complete-btn:active {
+    background: #a0a7d5;
+}
+
+
+/* Activity Log Section */
+.activity-log {
+    flex: 1;
+    /* Makes the activity log take up remaining space */
+    height: 100%;
+    /* Ensures the height matches the hero section */
+    background-color: white;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+}
+
+/* Activity Log Header - Centered */
+.activity-log-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+/* Activity Icon */
+.activity-log-header img {
+    width: 24px;
+    height: 24px;
+}
+
+/* Clear History Button - Centered */
+#clearHistoryBtn {
+    margin-top: 10px;
+    background-color: #ff5c8d;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#clearHistoryBtn:hover {
+    background-color: #ff3f72;
+}
+
+/* Log List */
+#logList {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+    max-width: 400px;
+    margin-top: 20px;
+}
+
+#logList li {
+    background-color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+/* Hide "No recent activities" when empty */
+#logList:empty::before {
+    content: "";
+}
+
+/* Custom Alert Modal */
+.custom-alert-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.custom-alert-modal .alert-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.custom-alert-modal .close-alert-btn {
+    background-color: #f44336;
+    /* Red color */
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.custom-alert-modal .close-alert-btn:hover {
+    background-color: #d32f2f;
+}
