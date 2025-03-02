@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const taskCountNav = document.getElementById("taskCount");
     const logList = document.getElementById("logList");
 
-    document.querySelectorAll(".complete-btn").forEach((btn, index) => {
+    completeButtons.forEach((btn, index) => {
         btn.addEventListener("click", function () {
             if (taskCounter > 0) {
                 taskCounter--;
@@ -42,44 +42,30 @@ document.addEventListener("DOMContentLoaded", function () {
                 taskCountNav.textContent = 6 - taskCounter;
                 btn.style.background = "#a0a7d5";
                 btn.disabled = true;
-    
+
+                // ✅ Update Activity Log
                 const logItem = document.createElement("li");
                 const currentTime = new Date().toLocaleTimeString();
-                logItem.textContent = `You have completed the task "${taskNames[index]}" at ${currentTime}`;
-                logItem.style.backgroundColor = "#F4F7FF";
-                logItem.style.padding = "10px";
-                logItem.style.marginBottom = "10px";
-                logItem.style.borderRadius = "5px";
+                logItem.textContent = `You completed "${taskNames[index]}" at ${currentTime}`;
+                logItem.style.backgroundColor = "#F4F7FF"; 
+                logItem.style.padding = "10px"; 
+                logItem.style.marginBottom = "10px"; 
+                logItem.style.borderRadius = "5px"; 
                 logList.appendChild(logItem);
-    
-                showCustomAlert(`Board updated successfully with task "${taskNames[index]}"`);
-    
-                // Check if all tasks are completed
+
+                // ✅ Show browser alert for task completion
+                alert(`Task completed: "${taskNames[index]}"`);
+
+                // ✅ Alert when all tasks are done
                 if (taskCounter === 0) {
-                    setTimeout(() => {
-                        showCustomAlert("🎉 Congratulations! All tasks are completed! 🎉");
-                    }, 1000); 
+                    alert("All tasks are completed!");
                 }
             }
         });
     });
-    
 
-    function showCustomAlert(message) {
-        const alertModal = document.createElement("div");
-        alertModal.classList.add("custom-alert-modal");
-        alertModal.innerHTML = `
-            <div class="alert-content">
-                <p>${message}</p>
-                <button class="close-alert-btn">Close</button>
-            </div>
-        `;
-        document.body.appendChild(alertModal);
-
-        alertModal.querySelector(".close-alert-btn").addEventListener("click", function () {
-            alertModal.remove();
-        });
-    }
+    // ✅ Ensure `clearHistoryBtn` is properly selected
+    const clearHistoryBtn = document.getElementById("clearHistoryBtn");
 
     clearHistoryBtn.addEventListener("click", function () {
         if (!logList) {
@@ -87,18 +73,18 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        logList.replaceChildren();
+        logList.replaceChildren(); // ✅ Clears activity log properly
 
         taskCounter = 6;
         taskCounterEl.textContent = taskCounter;
         taskCountNav.textContent = 0;
 
-        document.querySelectorAll(".complete-btn").forEach(btn => {
+        completeButtons.forEach(btn => {
             btn.style.background = "";
             btn.disabled = false;
         });
 
-        console.log("Activity history cleared!");
+        alert("Activity history cleared!");
     });
 
     const heroHeight = document.querySelector(".hero").offsetHeight;
