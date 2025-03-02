@@ -42,19 +42,28 @@ document.addEventListener("DOMContentLoaded", function () {
                 taskCountNav.textContent = 6 - taskCounter;
                 btn.style.background = "#a0a7d5";
                 btn.disabled = true;
+    
                 const logItem = document.createElement("li");
                 const currentTime = new Date().toLocaleTimeString();
                 logItem.textContent = `You have completed the task "${taskNames[index]}" at ${currentTime}`;
-                logItem.style.backgroundColor = "#F4F7FF"; 
-                logItem.style.padding = "10px"; 
-                logItem.style.marginBottom = "10px"; 
-                logItem.style.borderRadius = "5px"; 
+                logItem.style.backgroundColor = "#F4F7FF";
+                logItem.style.padding = "10px";
+                logItem.style.marginBottom = "10px";
+                logItem.style.borderRadius = "5px";
                 logList.appendChild(logItem);
-
+    
                 showCustomAlert(`Board updated successfully with task "${taskNames[index]}"`);
+    
+                // Check if all tasks are completed
+                if (taskCounter === 0) {
+                    setTimeout(() => {
+                        showCustomAlert("🎉 Congratulations! All tasks are completed! 🎉");
+                    }, 1000); 
+                }
             }
         });
     });
+    
 
     function showCustomAlert(message) {
         const alertModal = document.createElement("div");
